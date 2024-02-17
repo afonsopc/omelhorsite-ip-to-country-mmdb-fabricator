@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  ip-to-country-mmdb-fabricator:
+    container_name: ip-to-country-mmdb-fabricator
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - DELAY=86400
+      - DATABASE_PATH=/mmdb/database.mmdb
+    volumes:
+      - ./mmdb:/mmdb
